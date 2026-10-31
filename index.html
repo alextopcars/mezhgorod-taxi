@@ -1,86 +1,273 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Междугороднее такси из Белгорода по России</title>
-<meta name="description" content="Поездки между городами на автомобилях комфорт- и бизнес-класса. Заказ по телефону и через Telegram.">
-<meta name="theme-color" content="#0B211D">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>:root { --pine:#123B32; --pine-deep:#0B211D; --pine-mid:#1D4B40; --silver:#B9C6C9; --mist:#EAF0EF; --white:#F8FAF9; --ink:#11251F; --muted:#6F807B; --line:rgba(185,198,201,.25); --radius:14px; font-family:"Inter Tight",Arial,sans-serif; color-scheme:dark; }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; background:var(--pine-deep); }
-body { margin:0; min-width:320px; background:var(--pine-deep); color:var(--white); font-family:"Inter Tight",Arial,sans-serif; }
-a { color:inherit; text-decoration:none; }
-button,input,select,textarea { font:inherit; }
-button,a,input,select,textarea,summary { -webkit-tap-highlight-color:transparent; }
-:focus-visible { outline:2px solid var(--silver); outline-offset:4px; }
-.site-shell { overflow:hidden; background:var(--pine-deep); }
-.site-header { height:82px; padding:0 clamp(22px,6vw,92px); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); position:relative; z-index:5; background:#0B211D; }
-.brand { display:flex; align-items:center; gap:12px; }
-.brand-mark { width:34px; height:38px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--silver); border-radius:18px 18px 18px 4px; transform:rotate(-45deg); }
-.brand-mark span { width:8px; height:8px; border-radius:50%; background:var(--silver); }
-.brand-copy { display:flex; flex-direction:column; gap:4px; letter-spacing:.12em; }
-.brand-copy strong { font-size:12px; font-weight:700; }
-.brand-copy small { color:#9DADAA; font-size:9px; letter-spacing:.2em; }
-.desktop-nav { display:flex; gap:34px; color:#CAD4D1; font-size:13px; }
-.desktop-nav a:hover,.cta-text:hover { color:var(--silver); }
-.header-phone { display:flex; flex-direction:column; gap:3px; text-align:right; }
-.header-phone span { font-size:10px; color:#93A39E; text-transform:uppercase; letter-spacing:.16em; }
-.header-phone strong { font-size:14px; font-weight:600; }
-.hero-section { min-height:700px; height:calc(100svh - 82px); max-height:920px; position:relative; isolation:isolate; display:flex; align-items:center; padding:0 clamp(24px,10vw,150px); background:radial-gradient(ellipse at 74% 52%,#23483e 0%,#102c25 38%,#0B211D 75%); }
-.hero-visual { position:absolute; inset:0 0 0 33%; z-index:-1; overflow:hidden; opacity:.94; background:linear-gradient(90deg,#0B211D 0%,rgba(11,33,29,.25) 45%,rgba(11,33,29,.05) 100%),linear-gradient(0deg,#0B211D 0%,transparent 45%); }
-.hero-road { position:absolute; width:90%; height:45%; right:-4%; bottom:4%; transform:perspective(500px) rotateX(57deg); border-top:2px solid rgba(185,198,201,.28); background:repeating-linear-gradient(90deg,transparent 0 8%,rgba(185,198,201,.18) 8.1% 8.3%,transparent 8.4% 16%); box-shadow:0 -30px 80px rgba(0,0,0,.2); }
-.hero-car { position:absolute; width:min(55vw,700px); height:220px; right:7%; bottom:24%; filter:drop-shadow(0 30px 30px rgba(0,0,0,.4)); animation:car-arrive 1.2s cubic-bezier(.2,.7,.2,1) both; }
-.car-body { position:absolute; left:2%; right:1%; bottom:34px; height:88px; border-radius:52% 35% 18% 16% / 38% 48% 30% 24%; background:linear-gradient(165deg,#78908a 0%,#345b50 20%,#142e27 65%,#081b17 100%); border:1px solid rgba(210,225,220,.5); box-shadow:inset 0 8px 10px rgba(255,255,255,.15),inset 0 -12px 18px rgba(0,0,0,.55); }
-.car-roof { position:absolute; width:48%; height:90px; left:26%; bottom:100px; border-radius:70% 50% 0 0; background:linear-gradient(120deg,#6d8580,#203f36 65%,#10251f); clip-path:polygon(18% 0,78% 0,100% 100%,0 100%); border-top:2px solid rgba(220,230,226,.5); }
-.car-window { position:absolute; left:34%; width:32%; bottom:112px; height:66px; clip-path:polygon(18% 0,78% 0,100% 100%,0 100%); background:linear-gradient(120deg,rgba(185,198,201,.48),rgba(8,25,21,.92)); border:1px solid rgba(230,240,238,.3); }
-.wheel { position:absolute; width:68px; height:68px; bottom:10px; border:10px solid #101a17; border-radius:50%; background:radial-gradient(circle,#a9b5b4 0 15%,#40514d 17% 36%,#101a17 39%); box-shadow:0 0 0 2px #73817d; }
-.wheel-left { left:17%; }.wheel-right { right:15%; }
-.hero-light { position:absolute; width:50%; height:45%; right:3%; top:8%; background:radial-gradient(ellipse,rgba(185,198,201,.12),transparent 70%); }
-.hero-copy { max-width:570px; padding-bottom:42px; position:relative; z-index:2; }
-.eyebrow { display:flex; align-items:center; gap:10px; color:var(--silver); font-size:10px; letter-spacing:.19em; font-weight:650; }
-.eyebrow span { width:22px; height:1px; background:var(--silver); }
-h1,h2,h3,p { margin-top:0; }
-.hero-copy h1 { font-family:"Cabinet Grotesk","Arial",sans-serif; font-size:clamp(64px,8.5vw,126px); letter-spacing:-.075em; line-height:.88; font-weight:600; margin:35px 0 24px; }
-.hero-copy h1 em { color:var(--silver); font-style:normal; }
-.hero-lead { max-width:380px; color:#CAD4D1; font-size:17px; line-height:1.6; }
-.hero-actions { display:flex; align-items:center; gap:30px; margin-top:38px; }
-.cta-primary { display:inline-flex; align-items:center; gap:36px; padding:18px 21px; background:var(--silver); color:#102820; font-weight:700; font-size:13px; transition:transform .2s,background .2s; }
-.cta-primary:hover { transform:translateY(-3px); background:#EAF0EF; }
-.cta-primary span,.cta-text span { font-size:18px; }
-.cta-text { font-size:13px; color:#D3DDDA; display:flex; gap:12px; align-items:center; }
-.hero-index { position:absolute; right:clamp(24px,7vw,100px); top:18%; display:flex; align-items:center; gap:14px; color:#A8B7B2; font-size:9px; letter-spacing:.18em; writing-mode:vertical-rl; }
-.hero-index span { color:var(--silver); font-size:16px; }.hero-index i { width:1px; height:48px; background:var(--silver); }
-.hero-bottom { position:absolute; bottom:27px; left:clamp(24px,6vw,92px); right:clamp(24px,6vw,92px); display:flex; justify-content:space-between; color:#91A19C; font-size:9px; letter-spacing:.16em; border-top:1px solid var(--line); padding-top:16px; }
-.intro-band { padding:130px 12vw 140px; background:var(--mist); color:var(--ink); }
-.intro-band>p { color:#657772; font-size:10px; letter-spacing:.18em; margin-bottom:30px; }.intro-band h2,.section-head h2,.service-title h2,.faq-section h2,.footer-main h2 { font-family:"Cabinet Grotesk",Arial,sans-serif; font-size:clamp(38px,5.3vw,74px); line-height:1.02; letter-spacing:-.055em; font-weight:600; margin:0; }.intro-band h2 span,.section-head h2 span { color:#73847F; }
-.booking-section { padding:130px clamp(24px,10vw,150px); display:grid; grid-template-columns:.72fr 1.28fr; gap:9vw; background:#102D25; }
-.booking-aside { position:relative; padding-top:44px; }.section-number { position:absolute; top:0; left:0; color:var(--silver); font-family:"Cabinet Grotesk",sans-serif; font-size:42px; letter-spacing:-.07em; }.booking-aside .eyebrow { margin-top:42px; }.booking-aside h2 { font-family:"Cabinet Grotesk",sans-serif; font-size:clamp(42px,5vw,68px); line-height:.98; letter-spacing:-.06em; margin:22px 0; }.booking-aside>p:not(.eyebrow) { max-width:340px; color:#B8C6C1; line-height:1.7; font-size:15px; }.aside-call { display:inline-flex; gap:25px; margin-top:30px; border-bottom:1px solid var(--silver); padding-bottom:9px; font-size:14px; }.aside-call span { color:var(--silver); }
-.booking-form { background:#EAF0EF; color:#152A24; padding:clamp(24px,4vw,54px); border-radius:14px; }.form-heading { display:flex; justify-content:space-between; padding-bottom:22px; border-bottom:1px solid #C9D4D1; color:#60716C; font-size:10px; letter-spacing:.16em; margin-bottom:26px; }.form-heading span:last-child { color:#83918D; }.booking-form label { display:flex; flex-direction:column; gap:9px; color:#62736D; font-size:11px; letter-spacing:.04em; margin-bottom:21px; }.booking-form input,.booking-form select,.booking-form textarea { width:100%; min-width:0; border:0; border-bottom:1px solid #BAC7C2; background:transparent; color:#142A23; border-radius:0; padding:9px 0 12px; outline-offset:3px; font-size:15px; }.booking-form input::placeholder,.booking-form textarea::placeholder { color:#96A39F; }.booking-form select option { color:#142A23; }.route-fields { display:grid; grid-template-columns:1fr 1fr; gap:26px; }.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; }.consent-line { display:flex !important; flex-direction:row !important; align-items:flex-start; gap:10px !important; margin:6px 0 18px !important; color:#71817B !important; font-size:11px !important; line-height:1.5; }.consent-line input { width:16px; height:16px; flex:0 0 16px; accent-color:#173D32; margin-top:1px; }.form-submit-row { display:flex; align-items:center; gap:22px; margin-top:8px; }.form-submit { display:flex; flex-shrink:0; align-items:center; gap:28px; border:0; padding:17px 20px; background:#173D32; color:white; font-weight:650; cursor:pointer; transition:transform .2s,background .2s; }.form-submit:hover { background:#28594B; transform:translateY(-2px); }.form-submit:disabled { opacity:.6; cursor:wait; }.form-submit span { color:var(--silver); font-size:18px; }.form-submit-row p { color:#788782; font-size:10px; line-height:1.5; margin:0; }.form-notice { margin:18px 0 0; padding:12px 14px; font-size:13px; line-height:1.5; }.form-notice.success { background:#D9E8E0; color:#174A37; }.form-notice.error { background:#F3E7DE; color:#75442E; }
-.cars-section { padding:130px clamp(24px,10vw,150px) 120px; background:var(--mist); color:var(--ink); }.section-head { margin-bottom:58px; }.section-head .eyebrow,.service-title .eyebrow,.faq-section .eyebrow { color:#61736D; }.car-types { display:grid; grid-template-columns:1fr 1fr; gap:22px; }.car-type { background:#DCE5E2; border-radius:14px; overflow:hidden; }.car-type.business { background:#D3DEDA; }.car-art { height:290px; position:relative; overflow:hidden; background:radial-gradient(ellipse at 70% 30%,#6D8780,#294D42 48%,#18372E 100%); }.car-art-two { background:radial-gradient(ellipse at 70% 30%,#8C9A98,#465F59 48%,#243B34 100%); }.art-road { position:absolute; left:-10%; right:-10%; bottom:-45%; height:80%; transform:perspective(300px) rotateX(58deg); border-top:1px solid rgba(255,255,255,.4); background:repeating-linear-gradient(90deg,transparent 0 14%,rgba(255,255,255,.15) 14.2% 14.5%,transparent 14.7% 28%); }.art-sedan { position:absolute; width:62%; height:74px; right:12%; bottom:25%; border-radius:60% 30% 15% 15%; background:linear-gradient(165deg,#AAB9B5,#44665B 42%,#152B24); border:1px solid rgba(255,255,255,.45); box-shadow:0 30px 30px rgba(0,0,0,.25); }.art-sedan:before { content:""; position:absolute; width:48%; height:65px; left:25%; bottom:55px; clip-path:polygon(20% 0,80% 0,100% 100%,0 100%); background:linear-gradient(120deg,#9AADA7,#203F34); border-top:1px solid rgba(255,255,255,.5); }.art-sedan:after { content:""; position:absolute; width:45px; height:45px; left:17%; bottom:-21px; border-radius:50%; background:radial-gradient(circle,#A9B6B2 0 16%,#17241F 20% 60%,#080E0C 64%); box-shadow:260px 0 0 -1px #111B17; }.car-type-copy { padding:30px 34px 34px; }.car-type-copy>span { color:#71817B; font-size:10px; letter-spacing:.17em; }.car-type-copy h3 { font-family:"Cabinet Grotesk",sans-serif; font-size:34px; letter-spacing:-.04em; margin:18px 0 9px; }.car-type-copy p { max-width:390px; color:#667772; font-size:14px; line-height:1.6; min-height:46px; }.car-type-copy a { display:inline-flex; align-items:center; gap:24px; border-bottom:1px solid #80918B; padding-bottom:8px; color:#23473C; font-size:12px; font-weight:700; }.fleet-note { margin:25px 0 0; color:#71817B; font-size:11px; }
-.service-section { padding:130px clamp(24px,10vw,150px); display:grid; grid-template-columns:1fr 1fr; gap:10vw; background:#173B31; }.service-title h2 { font-size:clamp(38px,4.7vw,65px); }.service-steps { border-top:1px solid var(--line); }.service-steps article { display:grid; grid-template-columns:56px 1fr; gap:18px; padding:25px 0; border-bottom:1px solid var(--line); }.service-steps article>span { color:var(--silver); font-family:"Cabinet Grotesk",sans-serif; font-size:22px; }.service-steps h3 { font-size:18px; font-weight:600; margin:0 0 8px; }.service-steps p { max-width:390px; color:#B9C7C2; font-size:14px; line-height:1.6; margin:0; }
-.faq-section { padding:130px clamp(24px,10vw,150px); display:grid; grid-template-columns:.7fr 1.3fr; gap:9vw; background:var(--mist); color:var(--ink); }.faq-section h2 { font-size:clamp(38px,4.5vw,62px); }.faq-list { border-top:1px solid #C7D2CE; }.faq-list details { border-bottom:1px solid #C7D2CE; }.faq-list summary { display:flex; align-items:center; justify-content:space-between; gap:18px; list-style:none; padding:22px 0; cursor:pointer; font-size:16px; font-weight:600; }.faq-list summary::-webkit-details-marker { display:none; }.faq-list summary span { font-size:23px; font-weight:300; color:#6D8079; transition:transform .2s; }.faq-list details[open] summary span { transform:rotate(45deg); }.faq-list details p { max-width:620px; color:#687A73; line-height:1.7; font-size:14px; padding:0 35px 20px 0; margin:0; }
-.site-footer { padding:100px clamp(24px,10vw,150px) 28px; background:#091D18; }.footer-main { display:flex; align-items:flex-end; justify-content:space-between; gap:40px; padding-bottom:80px; }.footer-main h2 { font-size:clamp(48px,7vw,92px); }.footer-phone { display:flex; align-items:center; gap:24px; font-size:clamp(18px,2vw,27px); border-bottom:1px solid var(--silver); padding-bottom:13px; white-space:nowrap; }.footer-phone span { color:var(--silver); }.footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:22px; padding-top:24px; border-top:1px solid var(--line); color:#8FA09A; font-size:9px; letter-spacing:.13em; }.footer-brand { color:var(--white); }.footer-bottom>div { display:flex; gap:22px; }.footer-bottom small { font-size:10px; letter-spacing:0; }.mobile-call { display:none; }
-@keyframes car-arrive { from { transform:translate3d(90px,0,0); opacity:.25; } to { transform:translate3d(0,0,0); opacity:1; } }
-@media (max-width:900px) { .desktop-nav { gap:16px; font-size:11px; }.booking-section,.service-section,.faq-section { grid-template-columns:1fr; gap:55px; }.booking-aside { max-width:580px; }.hero-section { min-height:680px; }.hero-visual { left:15%; opacity:.62; }.hero-car { width:70vw; right:-5%; bottom:20%; }.hero-index { display:none; } }
-@media (max-width:640px) { .site-header { height:72px; padding:0 20px; }.desktop-nav { display:none; }.header-phone span { display:none; }.header-phone strong { font-size:12px; }.brand-mark { width:29px; height:32px; }.brand-copy strong { font-size:10px; }.brand-copy small { font-size:8px; }.hero-section { height:calc(100svh - 72px); min-height:650px; max-height:780px; padding:0 24px; align-items:flex-start; }.hero-copy { padding-top:110px; }.hero-copy h1 { font-size:clamp(61px,16vw,88px); margin:28px 0 20px; }.hero-lead { font-size:15px; max-width:300px; }.hero-visual { inset:22% -30% 0 0; opacity:.55; }.hero-car { width:100vw; right:-25%; bottom:23%; transform:scale(.88); }.hero-bottom { left:24px; right:24px; bottom:22px; font-size:7px; gap:10px; }.hero-bottom span:nth-child(2) { display:none; }.hero-actions { gap:18px; flex-wrap:wrap; }.cta-primary { padding:16px; gap:22px; }.intro-band,.booking-section,.cars-section,.service-section,.faq-section { padding:82px 24px; }.intro-band h2,.section-head h2,.service-title h2,.faq-section h2 { font-size:43px; }.route-fields,.form-grid { grid-template-columns:1fr; gap:0; }.booking-form { padding:24px 19px; }.form-submit-row { align-items:flex-start; flex-direction:column; }.form-submit { width:100%; justify-content:space-between; }.car-types { grid-template-columns:1fr; }.car-art { height:235px; }.car-type-copy { padding:25px 23px; }.car-type-copy h3 { font-size:30px; }.service-section { gap:38px; }.faq-section { gap:35px; }.faq-list summary { font-size:14px; }.site-footer { padding:78px 24px 90px; }.footer-main { align-items:flex-start; flex-direction:column; padding-bottom:55px; }.footer-main h2 { font-size:55px; }.footer-phone { font-size:20px; }.footer-bottom { align-items:flex-start; flex-direction:column; }.mobile-call { display:flex; position:fixed; z-index:10; bottom:12px; left:12px; right:12px; justify-content:center; align-items:center; padding:15px; background:var(--silver); color:#102820; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.25); font-size:13px; font-weight:700; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
-
-.header-contact{display:flex;align-items:center;gap:22px}.telegram-link{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#D5DFDB;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(185,198,201,.45);padding-bottom:5px}.telegram-link:hover{color:#fff;border-color:#fff}.footer-bottom>div{display:flex;gap:18px;flex-wrap:wrap}.mobile-actions{display:none}
-@media(max-width:760px){.header-contact{gap:10px}.telegram-link{font-size:8px;letter-spacing:.04em}.header-phone span{display:none}}
-@media(max-width:640px){.mobile-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;z-index:20;bottom:12px;left:12px;right:12px;padding:7px;background:rgba(9,29,24,.94);border:1px solid rgba(185,198,201,.28);border-radius:11px;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.28)}.mobile-actions a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 8px;border-radius:7px;font-size:11px;font-weight:700}.mobile-actions .mobile-call{position:static;display:flex;box-shadow:none;border-radius:7px;background:var(--silver);color:#102820}.mobile-actions .mobile-telegram{background:#254E42;color:#F8FAF9;border:1px solid rgba(185,198,201,.35)}.site-footer{padding-bottom:120px}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a09">
+<title>Междугороднее такси из Белгорода | Поездки по России</title>
+<meta name="description" content="Междугороднее такси из Белгорода по России. Комфортные поездки, согласование маршрута и стоимости до заказа.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1763568312677-01294608b056?auto=format&fit=crop&w=2200&q=85">
+<style>
+:root{--bg:#090a09;--panel:#121311;--panel2:#191a17;--gold:#ffc400;--gold2:#e9a900;--white:#f7f7f4;--muted:#b5b5ad;--line:rgba(255,255,255,.16);--max:1540px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Manrope,Arial,sans-serif;min-width:320px}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+img{display:block;max-width:100%}
+.container{width:min(calc(100% - 64px),var(--max));margin:0 auto}
+.site-header{position:absolute;top:0;left:0;right:0;z-index:20;height:106px;display:flex;align-items:center}
+.header-inner{width:min(calc(100% - 64px),var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:17px;flex:0 0 auto}
+.brand-mark{width:112px;height:76px;display:block}
+.brand-name{font-size:21px;line-height:1.15;font-weight:900;letter-spacing:-.04em}
+.brand-name span{display:block;color:var(--gold);font-size:22px}
+.main-nav{display:flex;align-items:center;gap:8px}
+.main-nav a{font-size:13px;font-weight:700;color:#f0f0eb;padding:13px 17px;border:1px solid transparent;border-radius:30px;white-space:nowrap;transition:.2s}
+.main-nav a:hover,.main-nav a.active{color:var(--gold);border-color:var(--gold)}
+.header-tg{display:flex;align-items:center;gap:13px;border:1px solid var(--gold);border-radius:50px;padding:10px 22px 10px 12px;background:rgba(5,6,5,.72);box-shadow:0 0 0 3px rgba(0,0,0,.14);white-space:nowrap}
+.tg-round{width:42px;height:42px;border-radius:50%;background:#293d52;display:grid;place-items:center;flex:0 0 42px}
+.tg-round svg{width:23px;height:23px;fill:#fff}
+.header-tg b{font-size:12px;line-height:1.3;display:block}
+.header-tg small{font-size:12px;color:var(--gold);font-weight:800;display:block}
+.hero{position:relative;isolation:isolate;min-height:760px;height:min(900px,100svh);display:flex;align-items:center;padding:105px 0 85px;background:#0a0b0a;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("https://images.unsplash.com/photo-1763568312677-01294608b056?auto=format&fit=crop&w=2200&q=85");background-size:cover;background-position:center 53%;transform:scale(1.01)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,6,5,.96) 0%,rgba(5,6,5,.84) 27%,rgba(5,6,5,.45) 49%,rgba(5,6,5,.08) 78%),linear-gradient(0deg,#090a09 0%,rgba(9,10,9,.1) 25%,rgba(9,10,9,.18) 100%)}
+.hero-content{width:min(calc(100% - 64px),var(--max));margin:0 auto;padding-top:60px;position:relative;z-index:2}
+.hero-copy{max-width:740px}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:14px;letter-spacing:.2em;font-weight:800;text-transform:uppercase}
+.eyebrow:before{content:"";display:inline-block;width:4px;height:108px;background:var(--gold);position:absolute;left:-26px;top:0}
+.hero-copy .eyebrow{position:relative;padding-left:4px;margin:0 0 21px}
+.hero-copy h1{font-size:clamp(54px,7.2vw,104px);line-height:.91;letter-spacing:-.075em;margin:0 0 20px;font-weight:900}
+.hero-copy h1 span{display:block;color:var(--gold);font-size:1.04em}
+.hero-sub{font-size:clamp(18px,2vw,25px);line-height:1.32;max-width:590px;margin:0;color:#f4f4f1;font-weight:500}
+.hero-cta-row{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:27px}
+.btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:66px;padding:0 29px;border:0;border-radius:50px;background:var(--gold);color:#080908;font-weight:900;font-size:17px;box-shadow:0 9px 30px rgba(255,196,0,.17);transition:transform .2s,background .2s}
+.btn-gold:hover{background:#ffd43c;transform:translateY(-2px)}
+.btn-gold svg{width:23px;height:23px;stroke:#080908;fill:none;stroke-width:2.5}
+.hero-phone{display:flex;align-items:center;gap:14px;border-left:1px solid var(--gold);padding-left:30px;min-height:50px}
+.phone-icon{width:42px;height:42px;color:var(--gold)}
+.hero-phone strong{font-size:19px;display:block;white-space:nowrap}
+.hero-phone small{font-size:12px;color:#d0d0c9}
+.hero-note{position:absolute;right:5%;top:17%;font-family:Caveat,cursive;color:#111;font-size:clamp(25px,2.7vw,39px);line-height:.92;font-weight:700;transform:rotate(-6deg);text-align:center;text-shadow:0 1px 12px rgba(255,255,255,.42)}
+.hero-note:after{content:"";display:block;width:80%;height:13px;margin:9px auto 0;border-bottom:3px solid #111;border-radius:50%;transform:rotate(-8deg)}
+.feature-strip{position:relative;z-index:4;margin-top:-2px;padding:0 0 37px;background:linear-gradient(180deg,#090a09 0%,#0b0c0b 100%)}
+.feature-bar{display:grid;grid-template-columns:repeat(5,1fr);background:rgba(24,24,22,.92);border:1px solid rgba(255,255,255,.2);border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.feature{min-height:116px;display:flex;align-items:center;justify-content:center;gap:20px;padding:17px 20px;position:relative}
+.feature:not(:last-child):after{content:"";position:absolute;right:0;top:23%;bottom:23%;width:1px;background:rgba(255,196,0,.45)}
+.feature-icon{width:52px;height:52px;flex:0 0 52px;color:var(--gold)}
+.feature p{font-size:16px;font-weight:700;line-height:1.24;margin:0}
+.feature p span{font-weight:500}
+.routes-section{padding:2px 0 110px;background:#0b0c0b}
+.routes-layout{display:grid;grid-template-columns:minmax(210px,.86fr) minmax(470px,2.15fr) minmax(265px,1.12fr);gap:24px;align-items:stretch}
+.routes-intro{padding:7px 0 0}
+.routes-intro h2{font-size:clamp(34px,3.4vw,48px);line-height:.98;letter-spacing:-.06em;margin:0 0 24px;font-weight:900}
+.routes-intro h2 span{display:block;color:var(--gold)}
+.gold-line{width:40px;height:2px;background:var(--gold);margin-bottom:17px}
+.routes-intro p{font-size:16px;color:#bbbcb5;line-height:1.5;max-width:230px;margin:0}
+.route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 20px}
+.route-card{position:relative;height:132px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 5px 18px rgba(0,0,0,.3);background:#252722}
+.route-card img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.route-card:hover img{transform:scale(1.06)}
+.route-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.88))}
+.route-label{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:14px;font-weight:800}
+.route-label svg{width:20px;height:20px;fill:var(--gold);stroke:var(--gold)}
+.route-label .arrow{margin-left:auto;color:#fff;font-size:22px;font-weight:400}
+.quick-card{border:1px solid rgba(255,196,0,.25);border-radius:28px;padding:25px 24px;background:radial-gradient(circle at 100% 0%,rgba(255,196,0,.09),transparent 48%),linear-gradient(145deg,#171815,#0f100e);display:flex;flex-direction:column;justify-content:center;min-height:280px}
+.quick-list{display:grid;gap:15px;margin:0 0 25px;padding:0;list-style:none}
+.quick-list li{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:700}
+.check{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-size:14px;font-weight:900;flex:0 0 22px}
+.btn-outline{display:flex;align-items:center;justify-content:center;gap:13px;padding:15px 12px;border:2px solid var(--gold);border-radius:50px;font-size:14px;font-weight:900;text-align:center;transition:.2s}
+.btn-outline:hover{background:var(--gold);color:#090a09}
+.tg-plane{width:28px;height:28px;fill:var(--gold);flex:0 0 28px}
+.quick-card .btn-outline:hover .tg-plane{fill:#090a09}
+.section{padding:100px 0}
+.section-kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:0 0 16px}
+.section-title{font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-.065em;font-weight:900;margin:0 0 18px}
+.section-lead{color:#b9bab3;line-height:1.7;font-size:16px;max-width:650px;margin:0}
+.advantages{background:#11120f;border-top:1px solid rgba(255,255,255,.07)}
+.advantages-head{display:flex;justify-content:space-between;gap:35px;align-items:flex-end;margin-bottom:44px}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.adv-card{border:1px solid rgba(255,196,0,.2);border-radius:18px;padding:25px 22px;background:linear-gradient(145deg,#1a1b17,#11120f);min-height:205px}
+.adv-icon{width:42px;height:42px;color:var(--gold);margin-bottom:20px}
+.adv-card h3{font-size:18px;margin:0 0 9px}
+.adv-card p{font-size:13px;line-height:1.6;color:#b9bab3;margin:0}
+.tariffs{background:linear-gradient(135deg,#0b0c0b,#161713)}
+.tariff-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.tariff-panel{border:1px solid rgba(255,196,0,.35);border-radius:22px;padding:32px;background:radial-gradient(circle at 100% 0%,rgba(255,196,0,.12),transparent 45%),#171814}
+.tariff-panel h3{margin:0 0 12px;font-size:24px}
+.tariff-panel p{color:#c1c1ba;line-height:1.65;font-size:14px;margin:0 0 25px}
+.tariff-panel .btn-gold{min-height:56px;font-size:14px}
+.reviews{background:#121310}
+.review-frame{border:1px solid rgba(255,196,0,.24);border-radius:24px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:30px;background:linear-gradient(110deg,#1a1b17,#10110f)}
+.review-frame h3{font-size:24px;margin:0 0 10px}
+.review-frame p{color:#b7b8b0;margin:0;max-width:650px;line-height:1.65;font-size:14px}
+.booking{background:#0a0b09;border-top:1px solid rgba(255,255,255,.07)}
+.booking-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:start}
+.booking-copy{padding-top:25px}
+.booking-copy .section-title{max-width:440px}
+.booking-form{background:#f2f2ec;color:#151611;border-radius:22px;padding:clamp(24px,4vw,42px)}
+.form-title{display:flex;justify-content:space-between;gap:15px;padding-bottom:18px;border-bottom:1px solid #d5d5cc;margin-bottom:24px;color:#66675e;font-size:11px;font-weight:900;letter-spacing:.16em}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.booking-form label{display:block;font-size:12px;color:#5f6058;font-weight:700;margin-bottom:17px}
+.booking-form input,.booking-form select,.booking-form textarea{display:block;width:100%;margin-top:8px;padding:12px 0;border:0;border-bottom:1px solid #c5c6bc;background:transparent;color:#141510;border-radius:0;outline-offset:3px;font:500 15px Manrope,Arial,sans-serif}
+.booking-form input::placeholder,.booking-form textarea::placeholder{color:#999a90}
+.booking-form select option{color:#111}
+.consent{display:flex!important;align-items:flex-start;gap:10px;font-size:11px!important;line-height:1.5;color:#686960!important}
+.consent input{width:16px;height:16px;margin:2px 0 0;accent-color:#b68b00;flex:0 0 16px}
+.submit-row{display:flex;align-items:center;gap:18px}
+.submit-row .btn-gold{min-height:58px;font-size:14px;flex:0 0 auto}
+.submit-note{font-size:10px;line-height:1.5;color:#77786f;margin:0}
+.form-notice{margin:15px 0 0;padding:12px 14px;border-radius:8px;background:#e1eddf;color:#26552b;font-size:13px;line-height:1.5}
+.site-footer{background:#050605;padding:42px 0 28px;border-top:1px solid rgba(255,255,255,.1)}
+.footer-main{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-bottom:30px}
+.footer-brand{display:flex;align-items:center;gap:14px}
+.footer-brand .brand-mark{width:65px;height:48px}
+.footer-brand strong{font-size:16px}
+.footer-brand span{display:block;color:var(--gold);font-weight:900}
+.footer-contact{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
+.footer-contact a{font-size:14px;font-weight:800}
+.footer-contact .gold-link{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:19px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#888981;font-size:11px}
+.mobile-quick{display:none}
+@media(max-width:1180px){.header-inner{gap:14px}.brand-mark{width:80px}.brand-name{font-size:17px}.brand-name span{font-size:18px}.main-nav a{padding:11px 10px;font-size:11px}.header-tg{padding:8px 13px 8px 9px;gap:8px}.header-tg b,.header-tg small{font-size:10px}.routes-layout{grid-template-columns:220px 1fr}.quick-card{grid-column:1/-1;min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px}.quick-list{margin:0}.quick-card .btn-outline{max-width:330px}.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.container,.header-inner,.hero-content{width:min(calc(100% - 38px),var(--max))}.site-header{height:80px;position:absolute}.brand{gap:8px}.brand-mark{width:57px;height:48px}.brand-name{font-size:13px}.brand-name span{font-size:14px}.main-nav{display:none}.header-tg{padding:6px 11px 6px 6px}.tg-round{width:34px;height:34px;flex-basis:34px}.header-tg b{font-size:9px}.header-tg small{font-size:9px}.hero{height:auto;min-height:750px;max-height:900px;align-items:flex-start;padding:115px 0 175px}.hero:before{background-position:61% center}.hero:after{background:linear-gradient(90deg,rgba(5,6,5,.94) 0%,rgba(5,6,5,.78) 55%,rgba(5,6,5,.22) 100%),linear-gradient(0deg,#090a09 0%,transparent 50%)}.hero-content{padding-top:36px}.hero-copy{max-width:600px}.hero-copy h1{font-size:clamp(51px,12vw,82px)}.hero-copy .eyebrow{font-size:10px;letter-spacing:.15em}.eyebrow:before{height:76px;left:-12px}.hero-sub{font-size:17px;max-width:370px}.hero-note{display:none}.hero-cta-row{gap:20px;margin-top:22px}.btn-gold{min-height:58px;font-size:14px;gap:16px;padding:0 23px}.hero-phone{border:0;padding:0;min-height:auto}.hero-phone strong{font-size:15px}.hero-phone small{font-size:10px}.phone-icon{width:31px;height:31px}.feature-strip{padding-bottom:30px}.feature-bar{grid-template-columns:repeat(2,1fr);border-radius:22px}.feature{min-height:86px;gap:12px;padding:12px}.feature:last-child{grid-column:1/-1}.feature:not(:last-child):after{top:20%;bottom:20%}.feature-icon{width:38px;height:38px;flex-basis:38px}.feature p{font-size:12px}.routes-section{padding-bottom:70px}.routes-layout{grid-template-columns:1fr;gap:22px}.routes-intro h2{font-size:40px;margin-bottom:16px}.routes-intro p{max-width:none}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.route-card{height:120px}.route-label{padding:9px 10px;font-size:12px;gap:7px}.route-label svg{width:17px;height:17px}.quick-card{grid-column:auto;display:flex;gap:22px;padding:22px}.quick-list{width:100%;gap:12px}.quick-list li{font-size:13px}.quick-card .btn-outline{max-width:none;width:100%}.section{padding:72px 0}.advantages-head{display:block;margin-bottom:27px}.section-title{font-size:42px}.section-lead{font-size:14px}.adv-grid{gap:10px}.adv-card{padding:18px 15px;min-height:190px}.adv-icon{width:34px;height:34px;margin-bottom:14px}.adv-card h3{font-size:15px}.adv-card p{font-size:12px}.tariff-wrap{grid-template-columns:1fr;gap:28px}.tariff-panel{padding:24px}.review-frame{display:block;padding:25px}.review-frame .btn-outline{margin-top:22px}.booking-grid{grid-template-columns:1fr;gap:28px}.booking-copy{padding-top:0}.booking-form{padding:24px 18px}.form-row{grid-template-columns:1fr;gap:0}.submit-row{align-items:stretch;flex-direction:column}.submit-row .btn-gold{width:100%;justify-content:space-between}.footer-main{align-items:flex-start;flex-direction:column}.footer-contact{gap:15px}.footer-bottom{flex-direction:column;align-items:flex-start}.mobile-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;z-index:30;bottom:10px;left:10px;right:10px;padding:7px;background:rgba(8,9,8,.93);border:1px solid rgba(255,196,0,.28);border-radius:12px;backdrop-filter:blur(12px);box-shadow:0 7px 26px rgba(0,0,0,.4)}.mobile-quick a{height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}.mobile-quick .mobile-call{background:var(--gold);color:#090a09}.mobile-quick .mobile-tg{border:1px solid var(--gold);color:var(--gold)}.site-footer{padding-bottom:90px}}
+@media(max-width:390px){.header-tg{gap:5px;padding-right:8px}.tg-round{width:29px;height:29px;flex-basis:29px}.header-tg b,.header-tg small{font-size:8px}.brand-mark{width:48px}.brand-name{font-size:11px}.brand-name span{font-size:12px}.hero-copy h1{font-size:49px}.route-card{height:105px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
 </head>
-<body><main class="site-shell">
-<header class="site-header"><a class="brand" href="#top"><span class="brand-mark"><span></span></span><span class="brand-copy"><strong>МЕЖДУГОРОДНЕЕ</strong><small>ТАКСИ · БЕЛГОРОД</small></span></a><nav class="desktop-nav"><a href="#booking">Заказать поездку</a><a href="#cars">Автомобили</a><a href="#how">Как это работает</a></nav><div class="header-contact"><a class="telegram-link" href="https://t.me/+79511488845?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8E%D1%8E%20%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D1%83.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F." target="_blank" rel="noopener">Личные сообщения Telegram ↗</a><a class="header-phone" href="tel:+79511488845"><span>Позвонить</span><strong>+7 951 148-88-45</strong></a></div></header>
-<section id="top" class="hero-section"><div class="hero-visual" role="img" aria-label="Автомобиль на междугородней трассе"><div class="hero-road"></div><div class="hero-car"><div class="car-roof"></div><div class="car-body"></div><div class="car-window"></div><i class="wheel wheel-left"></i><i class="wheel wheel-right"></i></div><div class="hero-light"></div></div><div class="hero-copy"><p class="eyebrow">ПОЕЗДКИ ИЗ БЕЛГОРОДА ПО РОССИИ</p><h1>Межгород<br><em>без суеты.</em></h1><p class="hero-lead">Комфортные поездки между городами на автомобилях комфорт- и бизнес-класса.</p><div class="hero-actions"><a class="cta-primary" href="#booking">Заказать поездку <span>↗</span></a><a class="cta-text" href="https://t.me/+79511488845?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8E%D1%8E%20%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D1%83.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F." target="_blank" rel="noopener">Написать лично в Telegram <span>↗</span></a></div></div><div class="hero-index"><span>01</span><i></i> МАРШРУТ НАЧИНАЕТСЯ ЗДЕСЬ</div><div class="hero-bottom"><span>БЕЛГОРОД</span><span>ЛЮБОЕ НАПРАВЛЕНИЕ ПО РОССИИ</span><span>КОМФОРТ / БИЗНЕС</span></div></section>
-<section class="intro-band"><p>ПУТЬ ВАЖЕН НЕ МЕНЬШЕ, ЧЕМ ПРИБЫТИЕ</p><h2>Вы выбираете направление.<br><span>Мы помогаем организовать дорогу.</span></h2></section>
-<section id="booking" class="booking-section"><div class="booking-aside"><span class="section-number">01</span><p class="eyebrow">ВАШ МАРШРУТ</p><h2>Запланируем<br>поездку.</h2><p>Оставьте детали маршрута. Уточним возможность поездки, согласуем подачу автомобиля и сообщим стоимость.</p><a href="tel:+79511488845" class="aside-call">+7 951 148-88-45 <span>↗</span></a></div>
-<form class="booking-form" id="ride-form"><div class="form-heading"><span>ЗАЯВКА НА ПОЕЗДКУ</span><span>01 / 06</span></div><div class="route-fields"><label>Откуда<input name="from" placeholder="Город отправления" value="Белгород" required maxlength="100"></label><label>Куда<input name="to" placeholder="Город назначения" required maxlength="100"></label></div><div class="form-grid"><label>Дата поездки<input name="date" type="date" required></label><label>Время отправления<input name="time" type="time" required></label><label>Пассажиры<select name="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label><label>Класс автомобиля<select name="vehicle"><option>Комфорт</option><option>Бизнес</option></select></label></div><div class="form-grid"><label>Ваше имя<input name="name" placeholder="Как к вам обращаться" required maxlength="80"></label><label>Телефон для связи<input name="phone" type="tel" placeholder="+7 (___) ___-__-__" required maxlength="30"></label></div><div class="form-grid"><label>Багаж<input name="luggage" placeholder="Например, 2 чемодана" maxlength="100"></label><label>Пожелания<textarea name="comment" placeholder="Детское кресло, адрес подачи и другое" rows="2" maxlength="500"></textarea></label></div><label class="consent-line"><input name="consent" type="checkbox" required><span>Согласен(на) на обработку персональных данных для ответа на заявку.</span></label><div class="form-submit-row"><button class="form-submit" type="submit">Отправить в Telegram <span>↗</span></button><p>Откроется ваш личный чат Telegram с уже заполненным сообщением. Останется только нажать «Отправить».</p></div><p class="form-notice" id="form-notice" role="status" hidden></p></form></section>
-<section id="cars" class="cars-section"><div class="section-head"><p class="eyebrow">ПРОСТРАНСТВО В ДОРОГЕ</p><h2>Комфорт, который<br><span>чувствуется в пути.</span></h2></div><div class="car-types"><article class="car-type comfort"><div class="car-art car-art-one"><span class="art-road"></span><span class="art-sedan"></span></div><div class="car-type-copy"><span>01 / КОМФОРТ</span><h3>Спокойная поездка.</h3><p>Для повседневных поездок, личных дел и путешествий между городами.</p><a href="#booking">Выбрать комфорт <b>↗</b></a></div></article><article class="car-type business"><div class="car-art car-art-two"><span class="art-road"></span><span class="art-sedan"></span></div><div class="car-type-copy"><span>02 / БИЗНЕС</span><h3>Больше пространства.</h3><p>Для деловых поездок и случаев, когда особенно важны сдержанность и удобство.</p><a href="#booking">Выбрать бизнес <b>↗</b></a></div></article></div><p class="fleet-note">Конкретный автомобиль и его оснащение согласуем при подтверждении заказа.</p></section>
-<section class="service-section"><div class="service-title"><p class="eyebrow">ПРОДУМАННЫЙ МАРШРУТ</p><h2>От первого звонка<br>до конечного адреса.</h2></div><div class="service-steps"><article><span>01</span><div><h3>Обсуждаем маршрут</h3><p>Уточняем города, адреса, дату, время и ваши пожелания.</p></div></article><article><span>02</span><div><h3>Согласуем поездку</h3><p>Подтверждаем доступность автомобиля и заранее сообщаем стоимость.</p></div></article><article><span>03</span><div><h3>Отправляемся в путь</h3><p>Подача автомобиля происходит по согласованному адресу и времени.</p></div></article></div></section>
-<section id="how" class="faq-section"><div><p class="eyebrow">ПЕРЕД ПОЕЗДКОЙ</p><h2>Частые вопросы.</h2></div><div class="faq-list"><details><summary>Откуда отправляются автомобили?<span>+</span></summary><p>Базовый город службы: Белгород. Направление и адрес подачи согласуем при оформлении заявки.</p></details><details><summary>Можно заказать поездку в другой регион России?<span>+</span></summary><p>Да, можно оставить заявку на междугородний маршрут по России. Возможность и условия поездки подтвердим индивидуально.</p></details><details><summary>Как узнать стоимость поездки?<span>+</span></summary><p>Укажите маршрут и дату в форме. Стоимость рассчитывается индивидуально и сообщается до подтверждения заказа.</p></details><details><summary>Можно ли заказать автомобиль бизнес-класса?<span>+</span></summary><p>Да, выберите класс «Бизнес» в форме. Наличие конкретного автомобиля подтвердим при согласовании.</p></details><details><summary>Можно ли указать несколько пассажиров и багаж?<span>+</span></summary><p>Да. Укажите число пассажиров и багаж в форме, чтобы мы могли согласовать подходящий автомобиль.</p></details></div></section>
-<footer class="site-footer" id="contacts"><div class="footer-main"><div><p class="eyebrow">ВАША ДОРОГА НАЧИНАЕТСЯ СЕЙЧАС</p><h2>Куда отправимся?</h2></div><a class="footer-phone" href="tel:+79511488845">+7 951 148-88-45<span>↗</span></a></div><div class="footer-bottom"><a class="brand footer-brand" href="#top"><span class="brand-mark"><span></span></span><span class="brand-copy"><strong>МЕЖДУГОРОДНЕЕ</strong><small>ТАКСИ · БЕЛГОРОД</small></span></a><span>ПОЕЗДКИ ПО РОССИИ</span><div><a href="https://t.me/+79511488845?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8E%D1%8E%20%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D1%83.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F." target="_blank" rel="noopener">ЛИЧНЫЕ СООБЩЕНИЯ TELEGRAM ↗</a><a href="https://wa.me/79511488845" target="_blank" rel="noopener">WHATSAPP ↗</a><a href="tel:+79511488845">ПОЗВОНИТЬ ↗</a></div><small>© <span id="year"></span> Междугороднее такси</small></div></footer><div class="mobile-actions"><a class="mobile-call" href="tel:+79511488845">Позвонить ↗</a><a class="mobile-telegram" href="https://t.me/+79511488845?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8E%D1%8E%20%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D1%83.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F." target="_blank" rel="noopener">Telegram ↗</a></div></main>
+<body>
+<header class="site-header">
+ <div class="header-inner">
+  <a class="brand" href="#top" aria-label="Междугороднее такси — главная">
+   <svg class="brand-mark" viewBox="0 0 120 82" aria-hidden="true"><path d="M11 73 48 7h17l39 66H84L56 25 30 73Z" fill="#ffc400"/><path d="M16 68Q48 50 94 30Q109 23 111 19Q112 14 101 14Q89 14 74 20" fill="none" stroke="#ffc400" stroke-width="4" stroke-linecap="round"/><path d="M37 59q16-9 28-14" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"/></svg>
+   <span class="brand-name">Междугороднее<span>такси</span></span>
+  </a>
+  <nav class="main-nav" aria-label="Главное меню">
+   <a class="active" href="#top">Главная</a><a href="#directions">Направления</a><a href="#advantages">Преимущества</a><a href="#tariffs">Тарифы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+  </nav>
+  <a class="header-tg" href="https://t.me/+79511488845" target="_blank" rel="noopener" aria-label="Написать в личные сообщения Telegram">
+   <span class="tg-round"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5 18.2 20c-.25 1.16-.93 1.45-1.88.9l-5.2-3.83-2.5 2.4c-.27.27-.5.5-1.03.5l.37-5.3 9.65-8.72c.42-.37-.09-.58-.65-.21L5.04 13.2.03 11.63c-1.09-.34-1.11-1.09.23-1.62L19.85 2.4c.9-.33 1.69.22 1.65 1.1Z"/></svg></span>
+   <span><b>Написать в Telegram</b><small>Личные сообщения</small></span>
+  </a>
+ </div>
+</header>
+<main>
+<section class="hero" id="top">
+ <div class="hero-content">
+  <div class="hero-copy">
+   <p class="eyebrow">Быстро • Комфортно • Безопасно</p>
+   <h1>Междугороднее<span>такси</span></h1>
+   <p class="hero-sub">Комфортные поездки на любые расстояния по России</p>
+   <div class="hero-cta-row">
+    <a class="btn-gold" href="#booking"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16h14l-1.2-7H6.2L5 16ZM7 9l1.5-4h7L17 9M7 16v3m10-3v3M4 12H2m20 0h-2"/></svg>Заказать поездку <span>›</span></a>
+    <a class="hero-phone" href="tel:+79511488845"><svg class="phone-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.58.56.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.46.56 3.58.11.36.02.76-.24 1.02l-2.22 2.2Z"/><path d="M14 3a7 7 0 0 1 7 7M14 6a4 4 0 0 1 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>+7 951 148-88-45</strong><small>Позвонить и уточнить поездку</small></span></a>
+   </div>
+  </div>
+ </div>
+ <div class="hero-note">Ваше путешествие<br>в надёжных руках</div>
+</section>
+
+<section class="feature-strip" aria-label="Преимущества сервиса">
+ <div class="container feature-bar">
+  <div class="feature"><svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M24 4 40 10v12c0 11-7 18-16 22C15 40 8 33 8 22V10L24 4Z"/><path d="m16 23 5 5 11-12"/></svg><p>Безопасно<br><span>и надёжно</span></p></div>
+  <div class="feature"><svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="24" r="19" stroke-dasharray="3 3"/><path d="M24 12v13l8 5"/><path d="M15 5 11 9m22-4 4 4"/></svg><p>24/7<br><span>На связи</span></p></div>
+  <div class="feature"><svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 7a5 5 0 1 0 10 0 5 5 0 0 0-10 0ZM17 14l4 15 13 3a3 3 0 0 1-1 6H19a5 5 0 0 1-5-4l-3-16"/></svg><p>Комфортные<br><span>автомобили</span></p></div>
+  <div class="feature"><svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="13" r="8"/><path d="M9 42v-5c0-8 6-14 15-14s15 6 15 14v5M16 9c1-6 15-8 18 0"/></svg><p>Внимательное<br><span>отношение</span></p></div>
+  <div class="feature"><svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m7 27 20-20 14 14-20 20L7 27Z"/><circle cx="29" cy="17" r="3"/><path d="M14 27 24 37"/></svg><p>Прозрачные<br><span>условия</span></p></div>
+ </div>
+</section>
+
+<section class="routes-section" id="directions">
+ <div class="container routes-layout">
+  <div class="routes-intro"><h2>Популярные<span>направления</span></h2><div class="gold-line"></div><p>Поездки из Белгорода по всей России</p></div>
+  <div class="route-grid">
+   <a class="route-card" href="#booking" data-destination="Москва"><img src="https://www.worldplacesexplained.com/r2/og/places/red-square-preview.webp" alt="Москва, Красная площадь" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Москва <span class="arrow">→</span></span></a>
+   <a class="route-card" href="#booking" data-destination="Санкт-Петербург"><img src="https://postmania.ru/files/products/0724-a.800x600.jpg" alt="Санкт-Петербург, Дворцовый мост" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Санкт-Петербург <span class="arrow">→</span></span></a>
+   <a class="route-card" href="#booking" data-destination="Краснодар"><img src="https://www.onetwotrip.com/ru/blog/wp-content/uploads/2017/07/fc-krasnodar.jpg" alt="Стадион Краснодар" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Краснодар <span class="arrow">→</span></span></a>
+   <a class="route-card" href="#booking" data-destination="Сочи"><img src="https://sochi.larest.ru/upload/d1f966423a/15671/morskoy-vokzal-sochi_800x445_127ae.jpg" alt="Сочи, морской вокзал" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Сочи <span class="arrow">→</span></span></a>
+   <a class="route-card" href="#booking" data-destination="Казань"><img src="https://content.cdn-cian.ru/realty/uploads/froala_editor/images/1827359654.jpg" alt="Казань, Кремль и мечеть Кул-Шариф" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Казань <span class="arrow">→</span></span></a>
+   <a class="route-card" href="#booking" data-destination="Ростов-на-Дону"><img src="https://media.radissonhotels.net/image/radisson-blu-hotel-rostov-on-don/exterior/16256-114238-f73187342_4K.jpg?impolicy=HomeHero" alt="Ростов-на-Дону, набережная Дона" loading="lazy"><span class="route-label"><svg viewBox="0 0 24 24"><path d="M12 22s8-8.1 8-13a8 8 0 1 0-16 0c0 4.9 8 13 8 13Zm0-10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Ростов-на-Дону <span class="arrow">→</span></span></a>
+  </div>
+  <aside class="quick-card">
+   <ul class="quick-list"><li><span class="check">✓</span> Быстрый заказ</li><li><span class="check">✓</span> Согласование цены заранее</li><li><span class="check">✓</span> Комфорт в пути</li></ul>
+   <a class="btn-outline" href="https://t.me/+79511488845" target="_blank" rel="noopener"><svg class="tg-plane" viewBox="0 0 24 24"><path d="M21.5 3.5 18.2 20c-.25 1.16-.93 1.45-1.88.9l-5.2-3.83-2.5 2.4c-.27.27-.5.5-1.03.5l.37-5.3 9.65-8.72c.42-.37-.09-.58-.65-.21L5.04 13.2.03 11.63c-1.09-.34-1.11-1.09.23-1.62L19.85 2.4c.9-.33 1.69.22 1.65 1.1Z"/></svg><span>Написать в Telegram<br><b style="color:var(--gold)">Личные сообщения</b></span></a>
+  </aside>
+ </div>
+</section>
+
+<section class="section advantages" id="advantages">
+ <div class="container">
+  <div class="advantages-head"><div><p class="section-kicker">Ваш комфорт — в деталях</p><h2 class="section-title">Почему выбирают<br>междугороднее такси</h2></div><p class="section-lead">Организуем поездку от согласования маршрута до прибытия по нужному адресу. Все детали и стоимость обсуждаем заранее.</p></div>
+  <div class="adv-grid">
+   <article class="adv-card"><svg class="adv-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 4 40 10v12c0 11-7 18-16 22C15 40 8 33 8 22V10L24 4Z"/><path d="m16 23 5 5 11-12"/></svg><h3>Спокойствие в дороге</h3><p>Заранее обсуждаем детали поездки, маршрут и пожелания пассажиров.</p></article>
+   <article class="adv-card"><svg class="adv-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 28a16 16 0 1 1 5 11"/><path d="M8 12v16h16M24 13v12l8 5"/></svg><h3>Удобное время</h3><p>Время подачи автомобиля согласуем с вами при подтверждении заказа.</p></article>
+   <article class="adv-card"><svg class="adv-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 32h36l-4-16H10L6 32ZM13 16l4-9h14l4 9"/><circle cx="14" cy="35" r="4"/><circle cx="34" cy="35" r="4"/></svg><h3>Комфортные автомобили</h3><p>Можно выбрать класс поездки: комфорт или бизнес, если доступен на нужную дату.</p></article>
+   <article class="adv-card"><svg class="adv-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 13h32M8 24h32M8 35h21"/><circle cx="36" cy="35" r="5"/></svg><h3>Понятная стоимость</h3><p>Согласуем цену до подтверждения поездки, без скрытых условий.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section tariffs" id="tariffs">
+ <div class="container tariff-wrap">
+  <div><p class="section-kicker">Тарифы и условия</p><h2 class="section-title">Стоимость поездки<br>без сюрпризов</h2><p class="section-lead">Цена зависит от маршрута, даты, класса автомобиля и дополнительных пожеланий. Напишите или оставьте заявку — рассчитаем стоимость и согласуем её до поездки.</p></div>
+  <div class="tariff-panel"><h3>Рассчитать маршрут</h3><p>Укажите город отправления и назначения, дату и количество пассажиров. Мы уточним детали и сообщим стоимость поездки.</p><a class="btn-gold" href="#booking">Узнать стоимость <span>→</span></a></div>
+ </div>
+</section>
+
+<section class="section reviews" id="reviews">
+ <div class="container">
+  <p class="section-kicker">Отзывы пассажиров</p><h2 class="section-title">Нам важно ваше мнение</h2>
+  <div class="review-frame"><div><h3>Есть вопросы перед поездкой?</h3><p>Напишите напрямую — ответим на вопросы о маршруте, автомобиле и условиях поездки. Здесь будут размещены реальные отзывы клиентов после их согласования.</p></div><a class="btn-outline" href="https://t.me/+79511488845" target="_blank" rel="noopener">Написать в Telegram <span style="color:var(--gold)">↗</span></a></div>
+ </div>
+</section>
+
+<section class="section booking" id="booking">
+ <div class="container booking-grid">
+  <div class="booking-copy"><p class="section-kicker">Быстрый заказ</p><h2 class="section-title">Запланируем<br>вашу поездку</h2><p class="section-lead">Заполните форму. Telegram откроет ваш личный чат с готовым сообщением — останется проверить заявку и нажать «Отправить».</p><p style="margin-top:28px;font-size:19px;font-weight:900"><a href="tel:+79511488845">+7 951 148-88-45</a></p><a class="btn-outline" style="max-width:275px" href="https://t.me/+79511488845" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
+  <form class="booking-form" id="ride-form">
+   <div class="form-title"><span>ЗАЯВКА НА ПОЕЗДКУ</span><span>БЕЛГОРОД · РОССИЯ</span></div>
+   <div class="form-row"><label>Откуда<input name="from" value="Белгород" required maxlength="100"></label><label>Куда<input name="to" placeholder="Город назначения" required maxlength="100"></label></div>
+   <div class="form-row"><label>Дата поездки<input type="date" name="date" required></label><label>Время отправления<input type="time" name="time" required></label></div>
+   <div class="form-row"><label>Пассажиры<select name="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label><label>Класс автомобиля<select name="vehicle"><option>Комфорт</option><option>Бизнес</option></select></label></div>
+   <div class="form-row"><label>Ваше имя<input name="name" placeholder="Как к вам обращаться" required maxlength="80"></label><label>Телефон для связи<input name="phone" type="tel" placeholder="+7 ___ ___-__-__" required maxlength="30"></label></div>
+   <label>Дополнительные пожелания<textarea name="comment" rows="2" placeholder="Багаж, адрес подачи, детское кресло..." maxlength="500"></textarea></label>
+   <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку персональных данных для ответа на заявку.</span></label>
+   <div class="submit-row"><button class="btn-gold" type="submit">Отправить заявку <span>↗</span></button><p class="submit-note">Откроется ваш личный чат Telegram с заполненным сообщением. Сообщение отправляется только после вашего подтверждения в приложении.</p></div>
+   <p class="form-notice" id="form-notice" role="status" hidden></p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer class="site-footer" id="contacts">
+ <div class="container">
+  <div class="footer-main">
+   <a class="footer-brand" href="#top"><svg class="brand-mark" viewBox="0 0 120 82" aria-hidden="true"><path d="M11 73 48 7h17l39 66H84L56 25 30 73Z" fill="#ffc400"/><path d="M16 68Q48 50 94 30Q109 23 111 19Q112 14 101 14Q89 14 74 20" fill="none" stroke="#ffc400" stroke-width="4" stroke-linecap="round"/></svg><strong>Междугороднее<span>такси</span></strong></a>
+   <div class="footer-contact"><a href="tel:+79511488845">+7 951 148-88-45</a><a class="gold-link" href="https://t.me/+79511488845" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Междугороднее такси</span><span>Белгород · Поездки по России</span><a href="#booking">Заказать поездку ↑</a></div>
+ </div>
+</footer>
+<div class="mobile-quick"><a class="mobile-call" href="tel:+79511488845">Позвонить ↗</a><a class="mobile-tg" href="https://t.me/+79511488845" target="_blank" rel="noopener">Telegram ↗</a></div>
+
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('ride-form').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;const d=new FormData(this);const msg=['Здравствуйте! Хочу заказать междугороднюю поездку.','', 'Маршрут: '+d.get('from')+' → '+d.get('to'),'Дата: '+d.get('date')+', время: '+d.get('time'),'Пассажиры: '+d.get('passengers'),'Класс автомобиля: '+d.get('vehicle'),'Имя: '+d.get('name'),'Телефон: '+d.get('phone'),'Багаж: '+(d.get('luggage')||'Не указан'),'Пожелания: '+(d.get('comment')||'Нет')].join('\n');const telegramUrl='https://t.me/+79511488845?text='+encodeURIComponent(msg);const opened=window.open(telegramUrl,'_blank');if(!opened){window.location.href=telegramUrl;}document.getElementById('form-notice').hidden=false;document.getElementById('form-notice').className='form-notice success';document.getElementById('form-notice').textContent='Открываем ваш личный чат Telegram. Проверьте готовый текст и нажмите «Отправить».';});
-</script></body></html>
+const dateInput=document.querySelector('input[name="date"]');
+if(dateInput){const now=new Date();const offset=now.getTimezoneOffset();const local=new Date(now.getTime()-offset*60000).toISOString().slice(0,10);dateInput.min=local;}
+document.querySelectorAll('[data-destination]').forEach(function(card){card.addEventListener('click',function(){const destination=document.querySelector('input[name="to"]');if(destination)destination.value=card.getAttribute('data-destination');});});
+document.getElementById('ride-form').addEventListener('submit',function(e){
+ e.preventDefault();if(!this.reportValidity())return;const d=new FormData(this);
+ const message=['Здравствуйте! Хочу заказать междугороднюю поездку.','Маршрут: '+d.get('from')+' → '+d.get('to'),'Дата: '+d.get('date')+', время: '+d.get('time'),'Пассажиры: '+d.get('passengers'),'Класс автомобиля: '+d.get('vehicle'),'Имя: '+d.get('name'),'Телефон: '+d.get('phone'),'Пожелания: '+(d.get('comment')||'Нет')].join('\n');
+ const url='https://t.me/+79511488845?text='+encodeURIComponent(message);
+ const notice=document.getElementById('form-notice');notice.hidden=false;notice.textContent='Открываем личный чат Telegram. Проверьте текст заявки и нажмите «Отправить».';
+ const opened=window.open(url,'_blank','noopener,noreferrer');if(!opened)window.location.href=url;
+});
+</script>
+</body>
+</html>
