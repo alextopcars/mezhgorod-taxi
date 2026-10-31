@@ -380,7 +380,7 @@ document.getElementById('ride-form').addEventListener('submit',function(e){
  // Telegram bot deep-link payload: compact route/date/time/pax/class data (max 64 URL-safe chars).
  const compact=[target,date,time,passengers,vehicle].join('|');
  const bytes=new TextEncoder().encode(compact);let binary='';bytes.forEach(b=>binary+=String.fromCharCode(b));
- const payload='r'+btoa(binary).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
+ const payload='r'+btoa(binary).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
  const startParam=payload.length<=64?payload:'order';
  const botUrl='https://t.me/taxi_blg_mezhgorodBot?start='+startParam;
  const notice=document.getElementById('form-notice');notice.hidden=false;
