@@ -211,6 +211,42 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
 }
 @media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none;transition:none}}
 
+
+/* Practical refinement: visible vehicle on phones, restrained premium finish */
+:root{--gold:#d9ad45;--gold2:#b88a2c}
+.header-inner{background:rgba(8,9,8,.88);border-color:rgba(217,173,69,.22);box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.site-header{backdrop-filter:none}
+.btn-gold{background:linear-gradient(110deg,#e4bf65,#c99a36);border:1px solid rgba(255,236,185,.58);box-shadow:0 5px 16px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-gold:hover{background:linear-gradient(110deg,#f0cf7c,#d9a83f);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.feature-bar{background:#11120f;border-color:#34342d;box-shadow:0 14px 32px rgba(0,0,0,.25)}
+.feature-icon{filter:none}
+.quick-card{background:#12130f;border-color:rgba(217,173,69,.3);box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.adv-card{background:#141510;border-color:#303027;box-shadow:none}
+.adv-card:hover{box-shadow:0 10px 25px rgba(0,0,0,.22)}
+.route-card{box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.route-card:hover{box-shadow:0 10px 22px rgba(0,0,0,.3)}
+.tariff-panel,.review-frame{box-shadow:none}
+.booking-form{box-shadow:0 15px 35px rgba(0,0,0,.25)}
+.mobile-hero-photo{display:none}
+@media(max-width:760px){
+ .hero{min-height:0;height:auto;max-height:none;padding:112px 0 118px;overflow:hidden}
+ .hero:before{background-position:65% center}
+ .hero:after{background:linear-gradient(90deg,rgba(5,6,5,.95) 0%,rgba(5,6,5,.76) 48%,rgba(5,6,5,.2) 100%),linear-gradient(0deg,#090a09 0%,rgba(9,10,9,.14) 35%,transparent 62%)}
+ .hero-content{padding-top:30px;position:relative;z-index:2}
+ .hero-copy{position:relative;z-index:2}
+ .mobile-hero-photo{display:block;width:calc(100% + 38px);max-width:none;height:276px;object-fit:cover;object-position:62% 54%;margin:18px -19px -112px;position:relative;z-index:1;filter:saturate(1.08) contrast(1.04);mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 72%,transparent 100%)}
+ .hero-copy h1{font-size:clamp(49px,11.8vw,76px)}
+ .hero-copy .eyebrow{font-size:10px;letter-spacing:.12em}
+ .hero-sub{max-width:320px;font-size:16px}
+ .hero-cta-row{align-items:flex-start;flex-direction:column;gap:15px}
+ .hero-phone{margin-top:1px}
+ .feature-bar{box-shadow:none}
+ .quick-card,.adv-card,.tariff-panel,.review-frame{box-shadow:none}
+ .route-card{height:118px}
+ .booking-form{box-shadow:0 9px 24px rgba(0,0,0,.2)}
+}
+@media(max-width:390px){.mobile-hero-photo{height:245px;object-position:61% 54%;margin-bottom:-100px}}
+
 </style>
 </head>
 <body>
@@ -241,6 +277,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
     <a class="hero-phone" href="tel:+79511488845"><svg class="phone-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.58.56.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.46.56 3.58.11.36.02.76-.24 1.02l-2.22 2.2Z"/><path d="M14 3a7 7 0 0 1 7 7M14 6a4 4 0 0 1 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>+7 951 148-88-45</strong><small>Позвонить и уточнить поездку</small></span></a>
    </div>
   </div>
+  <img class="mobile-hero-photo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3KwfF8rets4xLY61zvvK7G2MV43/37177f14-7179-48ee-ab4d-410a9b0f026e.png" alt="Чёрный автомобиль для междугородней поездки на загородной трассе" loading="eager" fetchpriority="high">
  </div>
  <div class="hero-note">Ваше путешествие<br>в надёжных руках</div>
 </section>
@@ -268,7 +305,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
   </div>
   <aside class="quick-card">
    <ul class="quick-list"><li><span class="check">✓</span> Быстрый заказ</li><li><span class="check">✓</span> Согласование цены заранее</li><li><span class="check">✓</span> Комфорт в пути</li></ul>
-   <a class="btn-outline" href="https://t.me/+79511488845" target="_blank" rel="noopener"><svg class="tg-plane" viewBox="0 0 24 24"><path d="M21.5 3.5 18.2 20c-.25 1.16-.93 1.45-1.88.9l-5.2-3.83-2.5 2.4c-.27.27-.5.5-1.03.5l.37-5.3 9.65-8.72c.42-.37-.09-.58-.65-.21L5.04 13.2.03 11.63c-1.09-.34-1.11-1.09.23-1.62L19.85 2.4c.9-.33 1.69.22 1.65 1.1Z"/></svg><span>Написать в Telegram<br><b style="color:var(--gold)">Личные сообщения</b></span></a>
+   <a class="btn-outline" href="https://t.me/taxi_blg_mezhgorodBot?start=order" target="_blank" rel="noopener"><svg class="tg-plane" viewBox="0 0 24 24"><path d="M21.5 3.5 18.2 20c-.25 1.16-.93 1.45-1.88.9l-5.2-3.83-2.5 2.4c-.27.27-.5.5-1.03.5l.37-5.3 9.65-8.72c.42-.37-.09-.58-.65-.21L5.04 13.2.03 11.63c-1.09-.34-1.11-1.09.23-1.62L19.85 2.4c.9-.33 1.69.22 1.65 1.1Z"/></svg><span>Написать в Telegram<br><b style="color:var(--gold)">Личные сообщения</b></span></a>
   </aside>
  </div>
 </section>
@@ -301,7 +338,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
 
 <section class="section booking" id="booking">
  <div class="container booking-grid">
-  <div class="booking-copy"><p class="section-kicker">Быстрый заказ</p><h2 class="section-title">Запланируем<br>вашу поездку</h2><p class="section-lead">Заполните форму. Telegram откроет ваш личный чат с готовым сообщением — останется проверить заявку и нажать «Отправить».</p><p style="margin-top:28px;font-size:19px;font-weight:900"><a href="tel:+79511488845">+7 951 148-88-45</a></p><a class="btn-outline" style="max-width:275px" href="https://t.me/+79511488845" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
+  <div class="booking-copy"><p class="section-kicker">Быстрый заказ</p><h2 class="section-title">Запланируем<br>вашу поездку</h2><p class="section-lead">Заполните форму. После заполнения формы откроется бот заказа поездок — нажмите «Запустить», чтобы продолжить оформление.</p><p style="margin-top:28px;font-size:19px;font-weight:900"><a href="tel:+79511488845">+7 951 148-88-45</a></p><a class="btn-outline" style="max-width:275px" href="https://t.me/+79511488845" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
   <form class="booking-form" id="ride-form">
    <div class="form-title"><span>ЗАЯВКА НА ПОЕЗДКУ</span><span>БЕЛГОРОД · РОССИЯ</span></div>
    <div class="form-row"><label>Откуда<input name="from" value="Белгород" required maxlength="100"></label><label>Куда<input name="to" placeholder="Город назначения" required maxlength="100"></label></div>
@@ -310,7 +347,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
    <div class="form-row"><label>Ваше имя<input name="name" placeholder="Как к вам обращаться" required maxlength="80"></label><label>Телефон для связи<input name="phone" type="tel" placeholder="+7 ___ ___-__-__" required maxlength="30"></label></div>
    <label>Дополнительные пожелания<textarea name="comment" rows="2" placeholder="Багаж, адрес подачи, детское кресло..." maxlength="500"></textarea></label>
    <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку персональных данных для ответа на заявку.</span></label>
-   <div class="submit-row"><button class="btn-gold" type="submit">Отправить заявку <span>↗</span></button><p class="submit-note">Откроется ваш личный чат Telegram с заполненным сообщением. Сообщение отправляется только после вашего подтверждения в приложении.</p></div>
+   <div class="submit-row"><button class="btn-gold" type="submit">Продолжить в боте Telegram <span>↗</span></button><p class="submit-note">Откроется бот @taxi_blg_mezhgorodBot с параметрами маршрута. Для отправки заявки нажмите «Запустить» в Telegram.</p></div>
    <p class="form-notice" id="form-notice" role="status" hidden></p>
   </form>
  </div>
@@ -335,10 +372,22 @@ if(dateInput){const now=new Date();const offset=now.getTimezoneOffset();const lo
 document.querySelectorAll('[data-destination]').forEach(function(card){card.addEventListener('click',function(){const destination=document.querySelector('input[name="to"]');if(destination)destination.value=card.getAttribute('data-destination');});});
 document.getElementById('ride-form').addEventListener('submit',function(e){
  e.preventDefault();if(!this.reportValidity())return;const d=new FormData(this);
- const message=['Здравствуйте! Хочу заказать междугороднюю поездку.','Маршрут: '+d.get('from')+' → '+d.get('to'),'Дата: '+d.get('date')+', время: '+d.get('time'),'Пассажиры: '+d.get('passengers'),'Класс автомобиля: '+d.get('vehicle'),'Имя: '+d.get('name'),'Телефон: '+d.get('phone'),'Пожелания: '+(d.get('comment')||'Нет')].join('\n');
- const url='https://t.me/+79511488845?text='+encodeURIComponent(message);
- const notice=document.getElementById('form-notice');notice.hidden=false;notice.textContent='Открываем личный чат Telegram. Проверьте текст заявки и нажмите «Отправить».';
- const opened=window.open(url,'_blank','noopener,noreferrer');if(!opened)window.location.href=url;
+ const target=String(d.get('to')||'').trim();
+ const date=String(d.get('date')||'').replaceAll('-','').slice(2);
+ const time=String(d.get('time')||'').replace(':','');
+ const passengers=String(d.get('passengers')||'1');
+ const vehicle=d.get('vehicle')==='Бизнес'?'B':'C';
+ // Telegram bot deep-link payload: compact route/date/time/pax/class data (max 64 URL-safe chars).
+ const compact=[target,date,time,passengers,vehicle].join('|');
+ const bytes=new TextEncoder().encode(compact);let binary='';bytes.forEach(b=>binary+=String.fromCharCode(b));
+ const payload='r'+btoa(binary).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
+ const startParam=payload.length<=64?payload:'order';
+ const botUrl='https://t.me/taxi_blg_mezhgorodBot?start='+startParam;
+ const notice=document.getElementById('form-notice');notice.hidden=false;
+ notice.textContent=payload.length<=64
+  ?'Открываем @taxi_blg_mezhgorodBot с параметрами поездки. В Telegram нажмите «Запустить», чтобы продолжить.'
+  :'Открываем @taxi_blg_mezhgorodBot. В Telegram нажмите «Запустить» и отправьте маршрут сообщением.';
+ const opened=window.open(botUrl,'_blank','noopener,noreferrer');if(!opened)window.location.href=botUrl;
 });
 
 const siteHeader=document.querySelector('.site-header');
