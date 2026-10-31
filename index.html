@@ -393,7 +393,9 @@ document.getElementById('ride-form').addEventListener('submit',function(e){
  notice.textContent='Открываем личную переписку Telegram с готовым текстом заявки. Проверьте данные и нажмите «Отправить».';
  const opened=window.open(personalChatUrl,'_blank','noopener,noreferrer');
  if(!opened)window.location.href=personalChatUrl;
-});=document.querySelector('.site-header');
+});
+
+const siteHeader=document.querySelector('.site-header');
 const syncHeader=()=>document.body.classList.toggle('is-scrolled',window.scrollY>24);
 syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
 const revealTargets=document.querySelectorAll('.routes-intro,.route-card,.quick-card,.adv-card,.tariff-panel,.review-frame,.booking-copy,.booking-form');
