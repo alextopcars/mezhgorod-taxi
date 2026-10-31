@@ -338,7 +338,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
 
 <section class="section booking" id="booking">
  <div class="container booking-grid">
-  <div class="booking-copy"><p class="section-kicker">Быстрый заказ</p><h2 class="section-title">Запланируем<br>вашу поездку</h2><p class="section-lead">Заполните форму. После заполнения формы откроется бот заказа поездок — нажмите «Запустить», чтобы продолжить оформление.</p><p style="margin-top:28px;font-size:19px;font-weight:900"><a href="tel:+79040897869">+7 904 089-78-69</a></p><a class="btn-outline" style="max-width:275px" href="https://t.me/+79040897869" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
+  <div class="booking-copy"><p class="section-kicker">Быстрый заказ</p><h2 class="section-title">Запланируем<br>вашу поездку</h2><p class="section-lead">Заполните форму. После заполнения формы откроется ваша личная переписка Telegram с готовой заявкой.</p><p style="margin-top:28px;font-size:19px;font-weight:900"><a href="tel:+79040897869">+7 904 089-78-69</a></p><a class="btn-outline" style="max-width:275px" href="https://t.me/+79040897869" target="_blank" rel="noopener">Личные сообщения Telegram ↗</a></div>
   <form class="booking-form" id="ride-form">
    <div class="form-title"><span>ЗАЯВКА НА ПОЕЗДКУ</span><span>БЕЛГОРОД · РОССИЯ</span></div>
    <div class="form-row"><label>Откуда<input name="from" value="Белгород" required maxlength="100"></label><label>Куда<input name="to" placeholder="Город назначения" required maxlength="100"></label></div>
@@ -347,7 +347,7 @@ body{background:radial-gradient(ellipse at 50% -18%,#29251a 0%,#0a0b09 44%,#0708
    <div class="form-row"><label>Ваше имя<input name="name" placeholder="Как к вам обращаться" required maxlength="80"></label><label>Телефон для связи<input name="phone" type="tel" placeholder="+7 ___ ___-__-__" required maxlength="30"></label></div>
    <label>Дополнительные пожелания<textarea name="comment" rows="2" placeholder="Багаж, адрес подачи, детское кресло..." maxlength="500"></textarea></label>
    <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку персональных данных для ответа на заявку.</span></label>
-   <div class="submit-row"><button class="btn-gold" type="submit">Продолжить в боте Telegram <span>↗</span></button><p class="submit-note">Откроется бот @taxi_blg_mezhgorodBot с параметрами маршрута. Для отправки заявки нажмите «Запустить» в Telegram.</p></div>
+   <div class="submit-row"><button class="btn-gold" type="submit">Написать в Telegram <span>↗</span></button><p class="submit-note">Заявка будет подготовлена в личном сообщении Telegram. Чтобы отправить её, нажмите «Отправить».</p></div>
    <p class="form-notice" id="form-notice" role="status" hidden></p>
   </form>
  </div>
@@ -371,26 +371,29 @@ const dateInput=document.querySelector('input[name="date"]');
 if(dateInput){const now=new Date();const offset=now.getTimezoneOffset();const local=new Date(now.getTime()-offset*60000).toISOString().slice(0,10);dateInput.min=local;}
 document.querySelectorAll('[data-destination]').forEach(function(card){card.addEventListener('click',function(){const destination=document.querySelector('input[name="to"]');if(destination)destination.value=card.getAttribute('data-destination');});});
 document.getElementById('ride-form').addEventListener('submit',function(e){
- e.preventDefault();if(!this.reportValidity())return;const d=new FormData(this);
- const target=String(d.get('to')||'').trim();
- const date=String(d.get('date')||'').replaceAll('-','').slice(2);
- const time=String(d.get('time')||'').replace(':','');
- const passengers=String(d.get('passengers')||'1');
- const vehicle=d.get('vehicle')==='Бизнес'?'B':'C';
- // Telegram bot deep-link payload: compact route/date/time/pax/class data (max 64 URL-safe chars).
- const compact=[target,date,time,passengers,vehicle].join('|');
- const bytes=new TextEncoder().encode(compact);let binary='';bytes.forEach(b=>binary+=String.fromCharCode(b));
- const payload='r'+btoa(binary).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
- const startParam=payload.length<=64?payload:'order';
- const botUrl='https://t.me/taxi_blg_mezhgorodBot?start='+startParam;
- const notice=document.getElementById('form-notice');notice.hidden=false;
- notice.textContent=payload.length<=64
-  ?'Открываем @taxi_blg_mezhgorodBot с параметрами поездки. В Telegram нажмите «Запустить», чтобы продолжить.'
-  :'Открываем @taxi_blg_mezhgorodBot. В Telegram нажмите «Запустить» и отправьте маршрут сообщением.';
- const opened=window.open(botUrl,'_blank','noopener,noreferrer');if(!opened)window.location.href=botUrl;
-});
-
-const siteHeader=document.querySelector('.site-header');
+ e.preventDefault();
+ if(!this.reportValidity())return;
+ const d=new FormData(this);
+ const message=[
+  'Здравствуйте! Хочу заказать междугороднюю поездку.',
+  '',
+  'Откуда: '+d.get('from'),
+  'Куда: '+d.get('to'),
+  'Дата: '+d.get('date'),
+  'Время: '+d.get('time'),
+  'Пассажиры: '+d.get('passengers'),
+  'Класс автомобиля: '+d.get('vehicle'),
+  'Имя: '+d.get('name'),
+  'Телефон для связи: '+d.get('phone'),
+  'Пожелания: '+(d.get('comment')||'Не указаны')
+ ].join('\n');
+ const personalChatUrl='https://t.me/+79040897869?text='+encodeURIComponent(message);
+ const notice=document.getElementById('form-notice');
+ notice.hidden=false;
+ notice.textContent='Открываем личную переписку Telegram с готовым текстом заявки. Проверьте данные и нажмите «Отправить».';
+ const opened=window.open(personalChatUrl,'_blank','noopener,noreferrer');
+ if(!opened)window.location.href=personalChatUrl;
+});=document.querySelector('.site-header');
 const syncHeader=()=>document.body.classList.toggle('is-scrolled',window.scrollY>24);
 syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
 const revealTargets=document.querySelectorAll('.routes-intro,.route-card,.quick-card,.adv-card,.tariff-panel,.review-frame,.booking-copy,.booking-form');
